@@ -24,12 +24,16 @@ class DNET(nn.Module):
         if 'DenseDepth' in args.DNET_architecture:
             # DenseDepth_BN
             _, BN = args.DNET_architecture.split('_')
-            from models.submodules.D_dense_depth import DenseDepth
-            self.d_net = DenseDepth(n_bins=args.output_dim, 
-                                    downsample_ratio=args.downsample_ratio, 
-                                    learned_upsampling=True,
-                                    BN=BN=='BN',
-                                    dnet=dnet)
+            # from models.submodules.D_dense_depth import DenseDepth
+            # self.d_net = DenseDepth(n_bins=args.output_dim, 
+            #                         downsample_ratio=args.downsample_ratio, 
+            #                         learned_upsampling=True,
+            #                         BN=BN=='BN',
+            #                         dnet=dnet)
+            from models.submodules.backbone import MnasMulti
+            alpha = 'fpn-mnas-1'
+            alpha = float('fpn-mnas-1'.split('-')[-1])
+            self.d_net = MnasMulti(alpha)
         else:
             raise Exception
 

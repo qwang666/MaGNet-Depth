@@ -122,6 +122,7 @@ If you wish to train the models, run
 
 ```python
 python train_DNet.py ./test_scripts/dnet/{scannet, kitti_eigen, kitti_official}.txt
+python train_DNet.py ./train_scripts/dnet/scannet.txt
 python train_FNet.py ./test_scripts/dnet/{scannet, kitti_eigen, kitti_official}.txt
 python train_MaGNet.py ./test_scripts/dnet/{scannet, kitti_eigen, kitti_official}.txt
 ```

@@ -1,6 +1,6 @@
 --exp_name scannet
---exp_dir ./exp/DNET/
---visible_gpus 01
+--exp_dir ./exp/DNET2/
+--visible_gpus 124
 
 --output_dim 2
 --output_type G
@@ -10,12 +10,12 @@
 --DNET_fix_encoder_weights None
 
 --n_epochs 5
---batch_size 16
+--batch_size 6
 --validate_every 50000
 --visualize_every 10000
 
 --dataset_name scannet
---dataset_path /path/to/ScanNet/
+--dataset_path /data/wq/scannet/
 
 --input_height 480
 --input_width 640
